@@ -8,8 +8,8 @@ import ListTask from './Components/ListTask';
 
 
 function App() {
-  const {editando,edicion,editando2}=edit()
-  const {tarea,setTarea,change}=add()
+  const {edicion}=edit()
+  const {tareas,tarea,onChangeTaskInput,change}=add()
 
   return (
 
@@ -24,7 +24,7 @@ function App() {
             name="Escribe aqui..." 
             class="input-task"
             value={tarea}
-            change={evt=>setTarea(evt.target.value)}
+            change={onChangeTaskInput}
           /> 
           <Button
             type="submit"
@@ -32,7 +32,7 @@ function App() {
             class="button-task"
           />
         </form>
-        <ListTask/>
+        <ListTask tasks={tareas} />
        
         {/* <Button
           editando={edicion?editando:editando2}
