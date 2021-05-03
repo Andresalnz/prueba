@@ -9,12 +9,15 @@ function useAdd(){
         setTareas([
             ...tareas,
             {nombretarea:tarea}
-        ])   
-        
-        
+        ])    
     }
 
-    return {tareas,tarea,setTarea,change}
+    const onChangeTaskInput = (evt)=>{
+      evt.preventDefault()
+      setTarea(evt.target.value)    
+  }
+
+    return {tareas,tarea,onChangeTaskInput,change}
 }
 
 export default useAdd;
